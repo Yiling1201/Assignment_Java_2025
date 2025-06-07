@@ -8,10 +8,12 @@ public class Main {
         System.out.println("Enter your text (type 'stop' to exit): ");
 
         Counter textCounter = new Counter();
+        String text = scanner.nextLine();
+        textCounter.addText(text);
 
 
         while (!textCounter.isStop()) { // --=+; while(true) om det är inte stop, run run run
-            String text = scanner.nextLine(); // läser in text från användaren
+            text = scanner.nextLine(); // läser in text från användaren
             textCounter.addText(text);        // lägger till texten i textCounter
         }
 
