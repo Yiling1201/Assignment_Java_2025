@@ -46,7 +46,7 @@ public class CounterTest {
     }
 
     @Test
-    public void testGet() {
+    public void testLongestWord() {
         Counter counter = new Counter();
         counter.addText("Hej!");
         counter.addText("Hur mår du?");
