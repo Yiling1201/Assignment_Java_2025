@@ -6,7 +6,7 @@ public class Counter {
     private int characterCounter; // Antal tecken totalt
     private int wordCounter; // Antal ord totalt
     private String longestWord; // Längsta ordet
-    private boolean isStopped; // Om "stop" har skrivits
+    private boolean isStopped; // true om användaren har skrivit "stop"
 
     //Konstruktor
     //Används för att skapa ett nytt objekt och ge attributen initiala värden.
@@ -18,20 +18,15 @@ public class Counter {
         isStopped = false; // ingen har skrivit "stop" ännu
     }
 
-    //Kollar om användaren skrev "stop"
-    public boolean isStop() {
-        return isStopped; // true om användaren skrev "stop", annars false
-    }
-
     //Tar emot text, hanterar om det är stop, och räknar rader, tecken, ord och hittar längsta ord
     public void addText(String text) {
-        if (text.equalsIgnoreCase("stop")) {
-            isStopped = true;  // Om text är "stop", sluta läsa mer
+        if (text.equalsIgnoreCase("stop")) { //Här är en if-sats. Om det inte är "stop" kan programmet fortsätta.
+            isStopped = true; // Om text är "stop", sluta läsa mer
             return; // Gå ut ur metoden direkt
         }
 
         //räknar rader
-        rowCounter++; // Ökar antal rader med 1 när användaren skriver och trycker Enter
+        rowCounter++; // Ökar antal rader med 1 varje gång när användaren använda metoden addText (trycker Enter).
 
         //räknar tecken
         characterCounter += text.length(); // Lägger till antalet tecken i characterCounter, inklusive mellanslag och symboler
@@ -47,6 +42,11 @@ public class Counter {
                 longestWord = words[i];// Nytt längsta ord
             }
         }
+    }
+
+    //Kollar om användaren skrev "stop"
+    public boolean isStop() { //en boolean-metod som returnerar true eller false
+        return isStopped; // true om användaren skrev "stop", annars false
     }
 
     // Hämtar antal rader hittills

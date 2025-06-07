@@ -7,14 +7,14 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your text (type 'stop' to exit): ");
 
-        Counter textCounter = new Counter();
-        String text = scanner.nextLine();
-        textCounter.addText(text);
+        Counter textCounter = new Counter();  //Skapar ett objekt Counter och ger det namnet textCounter
+        String text = scanner.nextLine();     //Läser in den första raden från användaren. //Att testa direkt om det är "stop", om ja,slipper vi gå in i loopen alls.
+        textCounter.addText(text);            //textCounter tar emot texten via metoden addText och uppdaterar räknare med texten
 
 
-        while (!textCounter.isStop()) { // om det är inte stop "--=+"; while(true) kör loopen om och om igen tills stopp-signal ges
-            text = scanner.nextLine();  // läser in text från användaren
-            textCounter.addText(text);  // lägger till texten i textCounter
+        while (!textCounter.isStop()) {       // Så länge texten inte är "stop" "--=+"; while(true) fortsätter loopen
+            text = scanner.nextLine();        // Läser in ny rad från användaren
+            textCounter.addText(text);        // Skickar in text till textCounter och uppdaterar räknare för rader, tecken, ord och längsta ord
         }
 
         System.out.println("Antal rader: " + textCounter.getRowCounter());
@@ -24,3 +24,15 @@ public class Main {
     }
 }
 
+/*
+Flödesbeskrivning
+
+1. Användaren skriver text som läses i Main med Scanner.
+2. Main anropar addText(text) i Counter och skickar texten dit.
+3.Counter uppdaterar sina attribut (rader, tecken, ord, längsta ord).
+4.Om texten är 'stop' blir isStopped true.
+5.Main fortsätter läsa i en while-loop tills isStopped blir true.
+6.När loopen slutar, hämtar Main resultat från Counter med get-metoder.
+7.Slutligen skriver Main ut resultaten till användaren.
+
+ */
