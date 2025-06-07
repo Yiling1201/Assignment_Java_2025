@@ -9,7 +9,7 @@ public class Counter {
     private boolean isStopped; // Om "stop" har skrivits
 
     //Konstruktor
-    //Används för att skapa ett nytt Counter-objekt och ge attributen initiala värden.
+    //Används för att skapa ett nytt objekt och ge attributen initiala värden.
     public Counter() {
         rowCounter = 0;
         characterCounter = 0;

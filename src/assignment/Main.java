@@ -12,9 +12,9 @@ public class Main {
         textCounter.addText(text);
 
 
-        while (!textCounter.isStop()) { // --=+; while(true) om det är inte stop, run run run
-            text = scanner.nextLine(); // läser in text från användaren
-            textCounter.addText(text);        // lägger till texten i textCounter
+        while (!textCounter.isStop()) { // om det är inte stop "--=+"; while(true) kör loopen om och om igen tills stopp-signal ges
+            text = scanner.nextLine();  // läser in text från användaren
+            textCounter.addText(text);  // lägger till texten i textCounter
         }
 
         System.out.println("Antal rader: " + textCounter.getRowCounter());

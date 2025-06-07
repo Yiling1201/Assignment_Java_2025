@@ -32,7 +32,7 @@ public class CounterTest {
     }
 
     @Test
-    public void testStopFunktion(){
+    public void testStopFunktion() {
         Counter counter = new Counter();
         counter.addText("Hej!");
         counter.addText("Hur mår du?");
@@ -41,7 +41,20 @@ public class CounterTest {
         int actual = counter.getRowCounter();
         int expected = 2;
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
 
+    }
+
+    @Test
+    public void testGet() {
+        Counter counter = new Counter();
+        counter.addText("Hej!");
+        counter.addText("Hur mår du?");
+        counter.addText("Trevlig helg!");
+
+        String actual = counter.getLongestWord();
+        String expected = "Trevlig";
+
+        assertEquals(expected, actual);
     }
 }
