@@ -8,8 +8,7 @@ public class Main {
         System.out.println("Enter your text (type 'stop' to exit): ");
 
         Counter textCounter = new Counter();  //Skapar ett objekt Counter och ger det namnet textCounter
-        String text = scanner.nextLine();     //Läser in den första raden från användaren. //Att testa direkt om det är "stop", om ja,slipper vi gå in i loopen alls.
-
+        String text = scanner.nextLine();    
 
 
         while (!textCounter.isStop()) {       // Så länge texten inte är "stop" "--=+"; while(true) fortsätter loopen
