@@ -9,7 +9,7 @@ public class Main {
 
         Counter textCounter = new Counter();  //Skapar ett objekt Counter och ger det namnet textCounter
         String text = scanner.nextLine();     //Läser in den första raden från användaren. //Att testa direkt om det är "stop", om ja,slipper vi gå in i loopen alls.
-        textCounter.addText(text);            //textCounter tar emot texten via metoden addText och uppdaterar räknare med texten
+        //textCounter.addText(text);            //textCounter tar emot texten via metoden addText och uppdaterar räknare med texten
 
 
         while (!textCounter.isStop()) {       // Så länge texten inte är "stop" "--=+"; while(true) fortsätter loopen
